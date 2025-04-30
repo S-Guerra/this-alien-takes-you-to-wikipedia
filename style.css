@@ -1,0 +1,308 @@
+:root {
+	--fcc-1: #1b1b32;
+	--fcc-2: #3b3b4f;
+	--fcc-3: #0a0a23;
+	--text-color: #ffffffde;
+
+	font-family: system-ui, Arial, sans-serif;
+	line-height: 1.5;
+	font-weight: 400;
+
+	color: var(--text-color);
+	background-color: var(--fcc-1);
+
+	font-synthesis: none;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	flex-direction: column;
+	min-width: 320px;
+	min-height: 100vh;
+	border: 7px solid var(--fcc-3);
+	margin: 0;
+	overflow: hidden;
+}
+
+.rocket {
+	background-color: #5b0001;
+	border-radius: 50%;
+}
+
+.rocket-wrapper {
+	position: relative;
+	overflow: visible;
+	cursor: pointer;
+	transition: all 2s ease-in;
+}
+
+.body-wrapper {
+	position: absolute;
+	bottom: 10px;
+	left: 25px;
+}
+
+.rocket.body {
+	width: 100px;
+	height: 240px;
+	border: 1px solid black;
+	overflow: hidden;
+}
+
+.lower-body {
+	position: absolute;
+	bottom: 0;
+	left: 13px;
+	width: 74px;
+	height: 50px;
+	background-color: var(--fcc-1);
+}
+
+.window {
+	position: absolute;
+	bottom: 150px;
+	left: 27px;
+	width: 46px;
+	height: 46px;
+	border: 4px solid black;
+	border-radius: 50%;
+	background-color: skyblue;
+	z-index: 899;
+	overflow: hidden;
+}
+
+.alien {
+	position: absolute;
+	bottom: 3px;
+	left: 3px;
+	z-index: 999;
+}
+
+.alien.head {
+	width: 26px;
+	height: 26px;
+	background-color: darkgreen;
+}
+
+.alien.head.top {
+	border-radius: 50%;
+}
+
+.alien.head.bottom {
+	transform: rotate(45deg) scale(0.69) translate(5px, 5px);
+}
+
+.alien.eye {
+	width: 10px;
+	height: 5px;
+	border-radius: 50%;
+	background-color: black;
+}
+
+.alien.eye.right {
+	bottom: 13px;
+	left: 17px;
+	transform: rotate(-10deg);
+}
+
+.alien.eye.left {
+	bottom: 13px;
+	left: 5px;
+	transform: rotate(10deg);
+}
+
+.alien.body {
+	position: absolute;
+	bottom: -28px;
+	left: 3px;
+	width: 25px;
+	height: 40px;
+	border-radius: 50%;
+	background-color: darkblue;
+	z-index: 849;
+}
+
+.stripe {
+	position: relative;
+	bottom: -110px;
+	width: 100px;
+	height: 40px;
+	background-color: var(--text-color);
+	z-index: 999;
+}
+
+#wiki-w {
+	position: relative;
+	bottom: 10px;
+	left: 17.5px;
+	width: 60px;
+	height: 60px;
+}
+
+.fin-wrapper {
+	display: flex;
+}
+
+.rocket.fin {
+	width: 30px;
+	height: 80px;
+	margin: 0 10px;
+	border: 1px solid black;
+	z-index: 999;
+}
+
+.rocket.fin:first-child {
+	transform: rotate(5deg);
+}
+
+.rocket.fin:last-child {
+	transform: rotate(-5deg);
+}
+
+.fire {
+	position: absolute;
+}
+
+.fire.flame.yellow {
+	left: 43px;
+	bottom: -10px;
+	width: 64px;
+	height: 140px;
+	border-radius: 50%;
+	background-color: yellow;
+}
+
+.fire.flame.orange {
+	left: 45.5px;
+	bottom: 2px;
+	width: 59px;
+	height: 130px;
+	border-radius: 50%;
+	background-color: orange;
+}
+
+.fire.flame.red {
+	left: 48px;
+	bottom: 17px;
+	width: 54px;
+	height: 120px;
+	border-radius: 50%;
+	background-color: red;
+}
+
+.fire.hider {
+	left: 40px;
+	bottom: 60px;
+	width: 70px;
+	height: 80px;
+	border-bottom: 1px solid black;
+	background-color: #5b0001;
+	z-index: 5;
+}
+
+hr {
+	min-width: 200px;
+	margin: 0 0 10px 0;
+	z-index: 2;
+}
+
+input,
+button {
+	padding: 7px;
+	border: 0;
+	border-radius: 5px;
+	color: var(--text-color);
+	background-color: var(--fcc-2);
+	font-size: 1.2em;
+}
+
+button {
+	margin-left: 4px;
+}
+
+input {
+	min-width: 170px;
+	margin: 15px 0 10vh 15px;
+}
+
+button:hover {
+	cursor: pointer;
+}
+
+button:active {
+	box-sizing: content-box;
+	border: 2px solid var(--fcc-2);
+	margin-left: 0;
+	outline: 2px solid var(--text-color);
+}
+
+.result-item {
+	width: 60vw;
+	padding: 20px;
+	border-radius: 15px;
+	margin: 2em;
+	color: var(--text-color);
+	background-color: var(--fcc-2);
+}
+
+#result-link {
+	text-decoration: none;
+}
+
+.flying {
+	transform: translate(200px, -70vh) rotate(20deg);
+}
+
+.shaking {
+	animation: shake 2s;
+}
+
+.hidden {
+	display: none;
+}
+
+@keyframes shake {
+	0% {
+		transform: translate(1px, 1px) rotate(0deg);
+	}
+	10% {
+		transform: translate(-1px, -2px) rotate(-1deg);
+	}
+	20% {
+		transform: translate(-3px, 0px) rotate(1deg);
+	}
+	30% {
+		transform: translate(3px, 2px) rotate(0deg);
+	}
+	40% {
+		transform: translate(1px, -1px) rotate(1deg);
+	}
+	50% {
+		transform: translate(-1px, 2px) rotate(-1deg);
+	}
+	60% {
+		transform: translate(-3px, 1px) rotate(0deg);
+	}
+	70% {
+		transform: translate(3px, 1px) rotate(-1deg);
+	}
+	80% {
+		transform: translate(-1px, -1px) rotate(1deg);
+	}
+	90% {
+		transform: translate(1px, 2px) rotate(0deg);
+	}
+	100% {
+		transform: translate(1px, -2px) rotate(-1deg);
+	}
+}
+/* Thanks Philip König for the shaking animation */
